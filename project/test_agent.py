@@ -1,5 +1,5 @@
 import os
-from agent import app
+from project.agent import app
 
 def run_agent(question: str, csv_path: str) -> dict:
     """
