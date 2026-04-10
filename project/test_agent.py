@@ -1,5 +1,5 @@
 import os
-from project.agent import app
+from agent import app
 
 def run_agent(question: str, csv_path: str) -> dict:
     """
@@ -29,5 +29,5 @@ def run_agent(question: str, csv_path: str) -> dict:
 
 if __name__ == "__main__":
     # Example usage for testing
-    result = run_agent("What is the average median house value?", "housing.csv")
+    result = run_agent("What is the average median house value?", "project/housing.csv")
     print(f"Final Answer: {result['final_answer']}")
