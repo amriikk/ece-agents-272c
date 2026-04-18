@@ -32,7 +32,7 @@ The tactical step is performed in a sandboxed environment using:
 
 ```python
 exec(code, env)
-
+```
 
 <pre>
 📁 Project Structure
