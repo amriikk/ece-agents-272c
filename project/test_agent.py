@@ -5,7 +5,6 @@ from agent import app
 # 1. REQUIRED FUNCTION
 def run_agent(question: str, csv_path: str) -> dict:
     """
-    Main interface for the TA's grading script.
     Executes the LangGraph Perceive-Think-Act loop.
     """
     initial_state = {

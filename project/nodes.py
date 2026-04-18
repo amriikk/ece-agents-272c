@@ -18,20 +18,28 @@ def codegen_node(state):
     client = Anthropic(api_key=os.environ.get("ANTHROPIC_API_KEY"))
     metadata = get_metadata(state['csv_path'])
     
+    # If this is a retry, append the error to the prompt so the LLM can fix it
+    error_context = ""
+    if state.get('retry_count', 0) > 0 and state.get('evaluation') == "FAIL":
+        error_context = f"\nPREVIOUS EXECUTION FAILED WITH ERROR:\n{state['execution_result']}\nPlease fix the code to resolve this error."
+
     prompt = f"""
     Write Python code using pandas to answer this question: {state['question']}
     CSV File Path: {state['csv_path']}
     
     Data Metadata:
     {metadata}
+    {error_context}
     
     Rules:
     - You MUST store the final result in a variable named 'result'.
     - Output ONLY raw Python code. Do not include markdown backticks or explanations.
+    - Make sure to import pandas as pd inside your code.
+    - ONLY use pandas, numpy, and standard Python libraries. Do NOT import scipy or sklearn.
     """
     
     response = client.messages.create(
-        model="claude-opus-4-1",
+        model="claude-sonnet-4-6",
         max_tokens=1000,
         messages=[{"role": "user", "content": prompt}]
     )
@@ -76,7 +84,7 @@ def respond_node(state):
     """
     
     response = client.messages.create(
-        model="claude-opus-4-1",
+        model="claude-sonnet-4-6",
         max_tokens=500,
         messages=[{"role": "user", "content": prompt}]
     )

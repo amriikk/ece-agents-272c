@@ -12,10 +12,12 @@ class AgentState(TypedDict):
     final_answer: str
 
 def should_retry(state):
-    """Implements the 'Retry once' requirement."""
-    if state['evaluation'] == "PASS" or state['retry_count'] >= 1:
+    """Implements 'Retry once' requirement."""
+    # This must be >= 2 so it actually loops back to codegen once!
+    if state['evaluation'] == "PASS" or state['retry_count'] >= 2:
         return "respond"
     return "codegen"
+
 
 workflow = StateGraph(AgentState)
 
