@@ -1,6 +1,10 @@
 import os
 import pandas as pd
 from anthropic import Anthropic
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Component: Perception (World View)
 def get_metadata(csv_path: str):
