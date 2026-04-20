@@ -48,9 +48,13 @@ project/
 
 📊 Datasets
 
-1. California Housing (Fixed)Analysis of geographic and economic trends, including spatial price variation and income correlations.
+1. California Housing (Fixed)
 
-2. Semiconductor Wafer Yield (Custom)A custom manufacturing log simulating IEA data:Metrics: wafer_id, batch_id, critical_dimension_nm, defect_density, yield_score, process_temp.
+Analysis of geographic and economic trends, including spatial price variation and income correlations.
+
+2. Semiconductor Wafer Yield (Custom)
+
+A custom manufacturing log simulating IEA data:Metrics: wafer_id, batch_id, critical_dimension_nm, defect_density, yield_score, process_temp.
 
 🛠️ Setup & Usage
 
