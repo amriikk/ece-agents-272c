@@ -2,7 +2,7 @@
 
 **Name:** Jeitī Trujillo
 **Institution:** University of California, Santa Barbara (UCSB)  
-**Department:** Electrical and Computer Engineering / Master of Technology Management
+**Department:** Electrical & Computer Engineering / Master of Technology Management
 
 ---
 
@@ -10,7 +10,7 @@
 
 This project implements an **Autonomous CSV Question-Answering AI Agent** tailored for engineering workflows. Built using **LangGraph** and **Claude 3.5 Sonnet**, the agent functions as an **Intelligent Engineering Assistant (IEA)**.
 
-It translates natural language queries into executable Python code, verifies the output, and provides data-driven insights through a stateful **Perceive-Think-Act-Learn** loop.
+It translates natural language queries into executable Python code, verifies the output, & provides data-driven insights through a stateful **Perceive-Think-Act-Learn** loop.
 
 ---
 
